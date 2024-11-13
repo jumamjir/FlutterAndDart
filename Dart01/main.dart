@@ -14,6 +14,18 @@ void main() {
   print('${listaDePalavras[0]} ${listaDePalavras[1]} ${listaDePalavras[2]} ${listaDePalavras[3]}');
 
   //2 - Introdução null safety
+  String? nome; 
+  nome = "ABC";
+  print(nome!);
+  nome = null;
+
+  late String sobrenome;
+  sobrenome = "Madeira";
+  print(sobrenome);
+  sobrenome = null;
+
+
+
   //3 - IF e SWITCH
   //4 - Métodos e classes
   //5 - Future, Async e Await
