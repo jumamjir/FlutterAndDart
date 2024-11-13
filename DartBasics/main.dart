@@ -51,7 +51,7 @@ void main() {
     default:
       print("Padrão");
   }
-  //4 - Estruturas de Repetição
+  //4 - Estruturas de Repetição e Metodos e Classes
   for (int i = 1; i <= 10; i++) {
     print(i * 2);
   }
@@ -61,7 +61,34 @@ void main() {
     print('Loop -> $contador');
   }
 
+  Celular celularDoJP = Celular("Azul", 5, 0.800, 5.7);
+  Celular celularDoZe = Celular("Preto", 10, 0.100, 5.7);
+
+  print(celularDoJP.toString());
+  print(celularDoZe.toString());
+
+  double resultado = celularDoJP.valorDoCelular(1000);
+  print(resultado);
+
   //5 - Future, Async e Await
   //6 - Orientação a objetos
   //7 - Herança, Polimorfismo e Abstração
+}
+
+class Celular {
+
+  final String cor;
+  final int qtdPros;
+  final double tamanho;
+  final double peso;
+
+  Celular(this.cor, this.qtdPros, this.peso, this.tamanho);
+
+  String toString() {
+      return 'Cor $cor, qtdPros $qtdPros, peso $peso, tamanho $tamanho';
+  }
+  double valorDoCelular(double valor) {
+    return valor * qtdPros;
+  }
+  
 }
