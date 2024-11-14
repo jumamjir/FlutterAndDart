@@ -51,7 +51,7 @@ void main() {
     default:
       print("Padrão");
   }
-  //4 - Estruturas de Repetição 
+  //4 - Estruturas de Repetição
   for (int i = 1; i <= 10; i++) {
     print(i * 2);
   }
@@ -72,10 +72,66 @@ void main() {
   print(resultado);
 
   //6 - Orientação a objetos
+
   Carro mercedes = Carro("Mercedes");
   Carro gol = Carro("Gol");
+
   //7 - Herança, Polimorfismo e Abstração
+
+  Jp jp = Jp();
+  jp.falar();
+
+  Pagamento pagamento = PagarComBoleto();
+  pagamento.pagar();
+
+  pagamento = PagarComPix();
+  pagamento.pagar();
 }
+abstract class Pagamento {
+  void pagar();
+}
+
+class PagarComBoleto implements Pagamento {
+  void pagar() {
+    print("Pagando com Boleto");
+  }
+}
+
+class PagarComPix implements Pagamento {
+  void pagar() {
+    print("Pagando com Pix");
+  }
+}
+
+
+
+
+
+
+class Pai {
+  String falar() {
+    return 'Gírias';
+  }
+}
+
+class Jp extends Pai {
+}
+abstract class Pessoa {
+  String comunicar();
+}
+
+class PessoaET implements Pessoa {
+  String comunicar() {
+    return 'Olá Mundo!';
+  }
+}
+
+class PessoaNaoET implements Pessoa {
+  String comunicar() {
+    return 'Bom dia!';
+  }
+}
+
 class Carro {
   final String modelo;
   String _segredo = 'Muito Dinheiro';
@@ -87,10 +143,9 @@ class Carro {
   void setValue(int valor) => _valor = valor;
 
   Carro(this.modelo);
-
 }
-class Celular {
 
+class Celular {
   final String cor;
   final int qtdPros;
   final double tamanho;
@@ -99,10 +154,10 @@ class Celular {
   Celular(this.cor, this.qtdPros, this.peso, this.tamanho);
 
   String toString() {
-      return 'Cor $cor, qtdPros $qtdPros, peso $peso, tamanho $tamanho';
+    return 'Cor $cor, qtdPros $qtdPros, peso $peso, tamanho $tamanho';
   }
+
   double valorDoCelular(double valor) {
     return valor * qtdPros;
   }
-  
 }
