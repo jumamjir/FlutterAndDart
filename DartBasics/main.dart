@@ -51,7 +51,7 @@ void main() {
     default:
       print("Padrão");
   }
-  //4 - Estruturas de Repetição e Metodos e Classes
+  //4 - Estruturas de Repetição 
   for (int i = 1; i <= 10; i++) {
     print(i * 2);
   }
@@ -60,6 +60,7 @@ void main() {
     contador = contador - 1;
     print('Loop -> $contador');
   }
+  //5 - Metodos e Classes
 
   Celular celularDoJP = Celular("Azul", 5, 0.800, 5.7);
   Celular celularDoZe = Celular("Preto", 10, 0.100, 5.7);
@@ -70,11 +71,24 @@ void main() {
   double resultado = celularDoJP.valorDoCelular(1000);
   print(resultado);
 
-  //5 - Future, Async e Await
   //6 - Orientação a objetos
+  Carro mercedes = Carro("Mercedes");
+  Carro gol = Carro("Gol");
   //7 - Herança, Polimorfismo e Abstração
 }
+class Carro {
+  final String modelo;
+  String _segredo = 'Muito Dinheiro';
 
+  int _valor = 1000;
+
+  int get valorDoCarro => _valor;
+
+  void setValue(int valor) => _valor = valor;
+
+  Carro(this.modelo);
+
+}
 class Celular {
 
   final String cor;
