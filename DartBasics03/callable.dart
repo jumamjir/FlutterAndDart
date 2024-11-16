@@ -1,11 +1,11 @@
 void main() {
 
 BuscarAlunos buscarAlunos = BuscarAlunos();
-buscarAlunos.buscar();
+buscarAlunos();
 
 
 }
 
 class BuscarAlunos {
-  void buscar() => print("Joao,Pedro,madeira");
+  void call() => print("Joao,Pedro,madeira"); //Callable Interfaces
 }
