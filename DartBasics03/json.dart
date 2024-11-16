@@ -1,17 +1,12 @@
 import 'dart:convert';
 
 void main() {
-  String json = '''
-{"usuario": "joaopedro@email.com",
-  "senha": "123456",
-  "permissoes": [
-  "owner","admin"
-  ]
-}
- ''';
-  print(json);
+  Map mapa = {
+    "nome": "João Pedro",
+    "pass": 123,
+    "permissoes": ['owner','admin']
+  };
 
-  Map resultJson = jsonDecode(json);
-
-  print(resultJson["permissoes"][0]);
+ var result = jsonEncode(mapa);
+  print(result);
 }
